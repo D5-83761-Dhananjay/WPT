@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <h1 style="margin-top: 70px;"><u><center>Calculator</center></u></h1>
+        <br/><br/><br/><br/><br/><br/>
+        <center>
+        <table style="height: 150px;">
+            <tr style="color: blue;">
+                <td>Enter Number 1</td>
+                <td><input type="number" id="1st_Num"></td>
+            </tr>
+            <tr style="color: blue;">
+                <td>Enter Number 2</td>
+                <td><input type="number" id="2nd_Num"></td>
+            </tr>
+            <tr style="color: blue;">
+                <td>Result</td>
+                <td><input type="number" id="result"></td>
+            </tr>
+        </table>
+        <br/><br/><br/><br/>
+        <table>
+            <tr>
+                <td><input type="button" value="Addition" onclick="add()"></td>
+                <td><input type="button" value="Substraction" onclick="Substraction()"></td>
+                <td><input type="button" value="Multiplication" onclick="Multiplication()"></td>
+                <td><input type="button" value="Division" onclick="Division()"></td>
+            </tr>
+        </table>
+        </center>
+
+        <script>
+            function add() {
+                var num1 = document.getElementById("1st_Num");
+                var num2 = document.getElementById("2nd_Num");
+                var res = document.getElementById("result");
+
+                var number1 = num1.value;
+                var number2 = num2.value;
+
+                var resultDiv = parseInt(number1) + parseInt(number2);
+                res.value = resultDiv;
+            }
+            function Substraction() {
+                var num1 = document.getElementById("1st_Num");
+                var num2 = document.getElementById("2nd_Num");
+                var res = document.getElementById("result");
+
+                var number1 = num1.value;
+                var number2 = num2.value;
+
+                var resultDiv = parseInt(number1) - parseInt(number2);
+                res.value = resultDiv;
+            }
+            function Multiplication() {
+                var num1 = document.getElementById("1st_Num");
+                var num2 = document.getElementById("2nd_Num");
+                var res = document.getElementById("result");
+
+                var number1 = num1.value;
+                var number2 = num2.value;
+
+                var resultDiv = parseInt(number1) * parseInt(number2);
+                res.value = resultDiv;
+            }
+            function Division() {
+                var num1 = document.getElementById("1st_Num");
+                var num2 = document.getElementById("2nd_Num");
+                var res = document.getElementById("result");
+
+                var number1 = num1.value;
+                var number2 = num2.value;
+
+                var resultDiv = parseInt(number1) / parseInt(number2);
+                res.value = resultDiv;
+            }
+
+
+        </script>
+    </body>
+</html>
