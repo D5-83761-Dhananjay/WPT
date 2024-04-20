@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Moving Car</title>
+</head>
+
+<body>
+    <div id="myCar" style=" position: absolute; top: 150px; left: -20px; "> <img src="car.jpeg" height="100px"
+            alt="car image"></div>
+    <div style="background-color: black; height: 10px; width: 800px; top: 239px; left: -20px; position: absolute;">
+    </div>
+    <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /><br /> <br /> <br /> <br /><br /> <br /> <br /> <br /><br />
+    <br /> <br />
+
+    <div>
+        <table  style="border-collapse: collapse;">
+            <tbody>
+                <tr>
+                    <td style="font-size: 20px;">X Axis : </td>
+                    <td id="Xaxis" style="width: 100px;border-style: groove;"></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20px;">Y Axis : </td>
+                    <td id="Yaxis" style="width: 100px;border-style: groove;"></td>
+                </tr>
+            </tbody>
+        </table> <br /> <br />
+        <input type="button" style="height: 30px; margin-right: 20px;" onclick="move()" value=Start">
+        <input type="button" style="height: 30px;" onclick="stop()" value="Stop">
+    </div>
+
+
+    <script>
+        var leftval = -20;
+    
+        var topval = 150;
+        var x =0;
+        var y = 0;
+        var rotatecar = 0;
+        var arrayOfQueues = new Array();
+        function move() {
+            var qNo = setInterval(KeepMoving, 100);
+            arrayOfQueues.push(qNo);
+        }
+
+        function stop() {
+            for (var i = 0; i < arrayOfQueues.length; i++) {
+                var qToStop = arrayOfQueues[i];
+                clearInterval(qToStop);
+            }
+        }
+
+
+
+        function KeepMoving() {
+            var refTomyCar = document.getElementById("myCar");
+            var xaxis = document.getElementById("Xaxis");
+            var yaxis = document.getElementById("Yaxis");
+            if (leftval > 743) {
+                if(topval < 1000) {
+                    topval = topval + 15;
+                refTomyCar.style.top = topval + "px";
+                leftval = leftval + 10;
+                refTomyCar.style.left = leftval + "px";
+                rotatecar = rotatecar + 15;
+                refTomyCar.style.rotate = rotatecar + "deg";
+                x= x+10;
+                xaxis.innerText = x;
+                y = y+15;
+                yaxis.innerText = y;
+                }     
+            }
+            else {
+                leftval = leftval + 10;
+                refTomyCar.style.left = leftval + "px";
+                x= x+10;
+                xaxis.innerText = x;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
